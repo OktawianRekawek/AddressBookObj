@@ -1,6 +1,6 @@
 #include "PlikZUzytkownikami.h"
 
-PlikZUzytkownikami::PlikZUzytkownikami(){
+PlikZUzytkownikami::PlikZUzytkownikami() {
     nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
 }
 
@@ -39,4 +39,22 @@ string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowym
     liniaZDanymiUzytkownika += uzytkownik.pobierzHaslo() + '|';
 
     return liniaZDanymiUzytkownika;
+}
+
+vector<Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku() {
+    Uzytkownik uzytkownik;
+    vector<Uzytkownik> uzytkownicy;
+    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
+
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true) {
+        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
+            uzytkownik = MetodyPomocnicze::pobierzDaneUzytkownika(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
+            uzytkownicy.push_back(uzytkownik);
+        }
+
+    }
+    plikTekstowy.close();
+    return uzytkownicy;
 }
