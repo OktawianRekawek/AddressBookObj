@@ -14,6 +14,7 @@ class MetodyPomocnicze {
 
 public:
        static string konwerjsaIntNaString(int);
+       static Uzytkownik pobierzDaneUzytkownika(string);
 };
 
 #endif // METODYPOMOCNICZE_H
