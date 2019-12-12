@@ -9,5 +9,7 @@ int main() {
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.logowanieUzytkownika();
+    cout << ksiazkaAdresowa.pobierzIdZalogowanegoUzytkownika() << endl;
+    ksiazkaAdresowa.wylogowanieUzytownika();
     return 0;
 }

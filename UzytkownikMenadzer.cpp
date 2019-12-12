@@ -1,5 +1,8 @@
 #include "UzytkownikMenadzer.h"
 
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika(){
+    return idZalogowanegoUzytkownika;
+}
 
 void UzytkownikMenadzer::rejestracjaUzytkownika() {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -91,4 +94,10 @@ void UzytkownikMenadzer::logowanieUzytkownika() {
     system("pause");
     idZalogowanegoUzytkownika = 0;
     return;
+}
+
+void UzytkownikMenadzer::wylogowanieUzytkownika(){
+    idZalogowanegoUzytkownika = 0;
+    cout << endl << "Wylogowales sie." << endl << endl;
+    system("pause");
 }

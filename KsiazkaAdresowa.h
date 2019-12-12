@@ -18,5 +18,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void logowanieUzytkownika();
+    void wylogowanieUzytownika();
+    int pobierzIdZalogowanegoUzytkownika();
 };
 #endif //KSIAZKAADRESOWA_H
