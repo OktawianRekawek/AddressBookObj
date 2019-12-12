@@ -20,5 +20,6 @@ public:
     void logowanieUzytkownika();
     void wylogowanieUzytownika();
     int pobierzIdZalogowanegoUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 #endif //KSIAZKAADRESOWA_H

@@ -24,4 +24,8 @@ int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
     return uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }
 
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
+    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
+}
+
 
