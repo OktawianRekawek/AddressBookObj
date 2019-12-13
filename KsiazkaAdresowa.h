@@ -24,5 +24,6 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
+    void wypiszWszystkichAdresatow();
 };
 #endif //KSIAZKAADRESOWA_H

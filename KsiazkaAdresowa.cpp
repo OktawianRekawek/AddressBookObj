@@ -1,6 +1,6 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami){
+KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami) {
     uzytkownikMenadzer.wczytajUzytkownikowZPliku();
 }
 
@@ -16,20 +16,24 @@ void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
 }
 
-void KsiazkaAdresowa::wylogowanieUzytownika(){
+void KsiazkaAdresowa::wylogowanieUzytownika() {
     uzytkownikMenadzer.wylogowanieUzytkownika();
 }
 
-int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika(){
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
     return uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
     uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
-void KsiazkaAdresowa::dodajAdresata(){
+void KsiazkaAdresowa::dodajAdresata() {
     adresatMenadzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika());
+}
+
+void KsiazkaAdresowa::wypiszWszystkichAdresatow() {
+    adresatMenadzer.wypiszWszystkichAdresatow();
 }
 
 

@@ -15,8 +15,12 @@ class AdresatMenadzer {
     int idOstatniegoAdresata;
 
     Adresat podajDaneNowegoAdresata(int);
+    void wyswietlDaneAdresata(Adresat adresat);
+
 public:
+    AdresatMenadzer() : idOstatniegoAdresata(0) {};
     void dodajAdresata(int);
+    void wypiszWszystkichAdresatow();
 };
 
 #endif // ADRESATMENADZER_H
