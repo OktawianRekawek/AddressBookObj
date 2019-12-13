@@ -28,4 +28,8 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(){
     uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
+void KsiazkaAdresowa::dodajAdresata(){
+    adresatMenadzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika());
+}
+
 
