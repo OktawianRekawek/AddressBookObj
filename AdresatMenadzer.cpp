@@ -8,7 +8,7 @@ void AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika) {
     adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     idOstatniegoAdresata++;
 }
