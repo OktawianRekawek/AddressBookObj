@@ -2,6 +2,7 @@
 
 KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), adresatMenadzer(nazwaPlikuZAdresatami) {
     uzytkownikMenadzer.wczytajUzytkownikowZPliku();
+    adresatMenadzer.wczytajAdresatowZPliku();
 }
 
 void KsiazkaAdresowa::rejestracjaUzytkownika() {

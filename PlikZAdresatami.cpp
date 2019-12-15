@@ -42,3 +42,66 @@ string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKre
 
     return liniaZDanymiAdresata;
 }
+
+vector<Adresat> PlikZAdresatami::wczytajAdresatowZPliku() {
+    Adresat adresat;
+    vector<Adresat> adresaci;
+    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
+    string daneOstaniegoAdresataWPliku = "";
+    fstream plikTekstowy;
+    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
+
+    if (plikTekstowy.good() == true) {
+        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {
+            adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
+            adresaci.push_back(adresat);
+        }
+        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
+    } else
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+
+    plikTekstowy.close();
+
+    return adresaci;
+}
+
+Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami) {
+    Adresat adresat;
+    string pojedynczaDanaAdresata = "";
+    int numerPojedynczejDanejAdresata = 1;
+
+    for (int pozycjaZnaku = 0; pozycjaZnaku < daneAdresataOddzielonePionowymiKreskami.length(); pozycjaZnaku++) {
+        if (daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku] != '|') {
+            pojedynczaDanaAdresata += daneAdresataOddzielonePionowymiKreskami[pozycjaZnaku];
+        } else {
+            switch(numerPojedynczejDanejAdresata) {
+            case 1:
+                adresat.ustawId(atoi(pojedynczaDanaAdresata.c_str()));
+                break;
+            case 2:
+                adresat.ustawIdUzytkownika(atoi(pojedynczaDanaAdresata.c_str()));
+                break;
+            case 3:
+                adresat.ustawImie(pojedynczaDanaAdresata);
+                break;
+            case 4:
+                adresat.ustawNazwisko(pojedynczaDanaAdresata);
+                break;
+            case 5:
+                adresat.ustawNrTelefonu(pojedynczaDanaAdresata);
+                break;
+            case 6:
+                adresat.ustawEmail(pojedynczaDanaAdresata);
+                break;
+            case 7:
+                adresat.ustawAdres(pojedynczaDanaAdresata);
+                break;
+            }
+            pojedynczaDanaAdresata = "";
+            numerPojedynczejDanejAdresata++;
+        }
+    }
+    return adresat;
+}
+
+

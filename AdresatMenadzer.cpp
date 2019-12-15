@@ -67,3 +67,8 @@ void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
+
+void AdresatMenadzer::wczytajAdresatowZPliku() {
+    adresaci = plikZAdresatami.wczytajAdresatowZPliku();
+    idOstatniegoAdresata = adresaci.back().pobierzId();
+}

@@ -15,9 +15,11 @@ class PlikZAdresatami {
 
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat);
     bool czyPlikJestPusty(fstream&);
+    Adresat pobierzDaneAdresata(string);
 public:
     PlikZAdresatami(string nazwaPliku) : nazwaPlikuZAdresatami(nazwaPliku) {};
     void dopiszAdresataDoPliku(Adresat);
+    vector<Adresat> wczytajAdresatowZPliku();
 };
 
 #endif // PLIKZADRESATAMI_H

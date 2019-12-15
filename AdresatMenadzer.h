@@ -22,6 +22,7 @@ public:
     AdresatMenadzer(string nazwaPlikuZAdresatami) : idOstatniegoAdresata(0), plikZAdresatami(nazwaPlikuZAdresatami) {};
     void dodajAdresata(int);
     void wypiszWszystkichAdresatow();
+    void wczytajAdresatowZPliku();
 };
 
 #endif // ADRESATMENADZER_H
