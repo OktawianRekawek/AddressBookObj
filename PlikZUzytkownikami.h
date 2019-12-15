@@ -13,7 +13,6 @@ class PlikZUzytkownikami {
 
     const string nazwaPlikuZUzytkownikami;
 
-    bool czyPlikJestPusty(fstream&);
     string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik);
     Uzytkownik pobierzDaneUzytkownika(string);
 public:
