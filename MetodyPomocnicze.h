@@ -5,6 +5,7 @@
 #include <iostream>
 #include <windows.h>
 #include <sstream>
+#include <fstream>
 #include <algorithm>
 
 #include "Uzytkownik.h"
@@ -17,6 +18,7 @@ public:
     static string konwerjsaIntNaString(int);
     static string wczytajLinie();
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string);
+    static bool czyPlikJestPusty(fstream&);
 };
 
 #endif // METODYPOMOCNICZE_H
