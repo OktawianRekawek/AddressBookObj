@@ -9,7 +9,6 @@ int main() {
 
     ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.rejestracjaUzytkownika();
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
     ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.wypiszWszystkichAdresatow();
     ksiazkaAdresowa.dodajAdresata();

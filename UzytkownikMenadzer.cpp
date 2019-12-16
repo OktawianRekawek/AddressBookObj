@@ -20,13 +20,13 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika() {
     string login;
     do {
         cout << "Podaj login: ";
-        cin >> login;
+        login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
-    cin >> haslo;
+    haslo = MetodyPomocnicze::wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
@@ -65,7 +65,7 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku() {
 void UzytkownikMenadzer::logowanieUzytkownika() {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
-
+    system("cls");
     cout << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
 
