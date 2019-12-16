@@ -70,5 +70,6 @@ void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat) {
 
 void AdresatMenadzer::wczytajAdresatowZPliku() {
     adresaci = plikZAdresatami.wczytajAdresatowZPliku();
-    idOstatniegoAdresata = adresaci.back().pobierzId();
+    if (!adresaci.empty())
+        idOstatniegoAdresata = adresaci.back().pobierzId();
 }
