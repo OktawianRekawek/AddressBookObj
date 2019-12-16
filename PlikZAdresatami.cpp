@@ -38,7 +38,6 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZPliku() {
     Adresat adresat;
     vector<Adresat> adresaci;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
     plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
 
@@ -47,9 +46,7 @@ vector<Adresat> PlikZAdresatami::wczytajAdresatowZPliku() {
             adresat = pobierzDaneAdresata(daneJednegoAdresataOddzielonePionowymiKreskami);
             adresaci.push_back(adresat);
         }
-        daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-    } else
-        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+    }
 
     plikTekstowy.close();
 
