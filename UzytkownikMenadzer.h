@@ -22,12 +22,11 @@ class UzytkownikMenadzer {
     bool czyIstniejeLogin(string);
 
 public:
-    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenadzer(string);
     int pobierzIdZalogowanegoUzytkownika();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    void wczytajUzytkownikowZPliku();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
 };

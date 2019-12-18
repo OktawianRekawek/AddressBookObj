@@ -1,5 +1,9 @@
 #include "UzytkownikMenadzer.h"
 
+UzytkownikMenadzer::UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
+
 int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika() {
     return idZalogowanegoUzytkownika;
 }
@@ -58,9 +62,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow() {
     }
 }
 
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku() {
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 
 void UzytkownikMenadzer::logowanieUzytkownika() {
     Uzytkownik uzytkownik;
