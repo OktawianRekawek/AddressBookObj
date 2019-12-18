@@ -1,6 +1,12 @@
 #include "KsiazkaAdresowa.h"
 
-KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), adresatMenadzer(nazwaPlikuZAdresatami) {
+KsiazkaAdresowa::KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {
+    adresatMenadzer = NULL;
+}
+
+KsiazkaAdresowa::~KsiazkaAdresowa() {
+    delete adresatMenadzer;
+    adresatMenadzer = NULL;
 }
 
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
@@ -13,14 +19,15 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany()){
+        adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI,uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 
 void KsiazkaAdresowa::wylogowanieUzytownika() {
     uzytkownikMenadzer.wylogowanieUzytkownika();
-}
-
-int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
-    return uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
+    delete adresatMenadzer;
+    adresatMenadzer = NULL;
 }
 
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
@@ -28,11 +35,17 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika() {
 }
 
 void KsiazkaAdresowa::dodajAdresata() {
-    adresatMenadzer.dodajAdresata(pobierzIdZalogowanegoUzytkownika());
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany()) {
+        adresatMenadzer->dodajAdresata();
+    } else {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+
 }
 
 void KsiazkaAdresowa::wypiszWszystkichAdresatow() {
-    adresatMenadzer.wypiszWszystkichAdresatow();
+    adresatMenadzer->wypiszWszystkichAdresatow();
 }
 
 
