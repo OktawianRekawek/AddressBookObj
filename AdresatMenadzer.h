@@ -19,7 +19,7 @@ class AdresatMenadzer {
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatMenadzer(string nazwaPlikuZAdresatami) : idOstatniegoAdresata(0), plikZAdresatami(nazwaPlikuZAdresatami) {};
+    AdresatMenadzer(string);
     void dodajAdresata(int);
     void wypiszWszystkichAdresatow();
     void wczytajAdresatowZPliku();

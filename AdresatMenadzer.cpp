@@ -1,5 +1,9 @@
 #include "AdresatMenadzer.h"
 
+AdresatMenadzer::AdresatMenadzer(string nazwaPlikuZAdresatami) : idOstatniegoAdresata(0), plikZAdresatami(nazwaPlikuZAdresatami) {
+    wczytajAdresatowZPliku();
+}
+
 void AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika) {
     Adresat adresat;
 
