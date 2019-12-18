@@ -12,17 +12,17 @@ using namespace std;
 class AdresatMenadzer {
 
     vector<Adresat> adresaci;
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     PlikZAdresatami plikZAdresatami;
 
-    Adresat podajDaneNowegoAdresata(int);
+    Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
 
 public:
-    AdresatMenadzer(string);
-    void dodajAdresata(int);
+    AdresatMenadzer(string, int);
+    void dodajAdresata();
     void wypiszWszystkichAdresatow();
-    void wczytajAdresatowZPliku();
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 };
 
 #endif // ADRESATMENADZER_H

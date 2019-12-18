@@ -29,6 +29,7 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wylogowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
 };
 
 #endif //UZYTKOWNIKMENADZER_H
