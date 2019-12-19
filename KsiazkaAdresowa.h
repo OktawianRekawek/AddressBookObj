@@ -26,5 +26,6 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
     void wypiszWszystkichAdresatow();
+    bool czyUzytkownikJestZalogowany();
 };
 #endif //KSIAZKAADRESOWA_H

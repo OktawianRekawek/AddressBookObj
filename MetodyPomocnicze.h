@@ -21,6 +21,7 @@ public:
     static bool czyPlikJestPusty(fstream&);
     static string pobierzLiczbe(string, int);
     static int konwersjaStringNaInt(string);
+    static char wczytajZnak();
 };
 
 #endif // METODYPOMOCNICZE_H

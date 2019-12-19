@@ -19,7 +19,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
-    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany()){
+    if (uzytkownikMenadzer.czyUzytkownikJestZalogowany()) {
         adresatMenadzer = new AdresatMenadzer(NAZWA_PLIKU_Z_ADRESATAMI,uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
@@ -48,4 +48,6 @@ void KsiazkaAdresowa::wypiszWszystkichAdresatow() {
     adresatMenadzer->wypiszWszystkichAdresatow();
 }
 
-
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany() {
+    return uzytkownikMenadzer.czyUzytkownikJestZalogowany();
+}
