@@ -17,12 +17,16 @@ class AdresatMenadzer {
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 
 public:
     AdresatMenadzer(string, int);
     void dodajAdresata();
     void wypiszWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    void edytujAdresata();
 };
 
 #endif // ADRESATMENADZER_H

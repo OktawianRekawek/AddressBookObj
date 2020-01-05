@@ -22,6 +22,7 @@ public:
     static string pobierzLiczbe(string, int);
     static int konwersjaStringNaInt(string);
     static char wczytajZnak();
+    static int wczytajLiczbeCalkowita();
 };
 
 #endif // METODYPOMOCNICZE_H
