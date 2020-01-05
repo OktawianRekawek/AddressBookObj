@@ -79,3 +79,95 @@ void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat) {
 void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 }
+
+void AdresatMenadzer::edytujAdresata() {
+    system("cls");
+    Adresat adresat;
+    int idEdytowanegoAdresata = 0;
+    int numerLiniiEdytowanegoAdresata = 0;
+    string liniaZDanymiAdresata = "";
+    string imie = "", nazwisko = "", nrTelefonu = "", email = "", adres = "";
+
+    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
+    idEdytowanegoAdresata = podajIdWybranegoAdresata();
+
+    char wybor;
+    bool czyIstniejeAdresat = false;
+
+    for (int i = 0; i < adresaci.size(); i++) {
+        if (adresaci[i].pobierzId() == idEdytowanegoAdresata) {
+            czyIstniejeAdresat = true;
+            wybor = wybierzOpcjeZMenuEdycja();
+
+            switch (wybor) {
+            case '1':
+                cout << "Podaj nowe imie: ";
+                imie = MetodyPomocnicze::wczytajLinie();
+                imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
+                adresaci[i].ustawImie(imie);
+                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                break;
+            case '2':
+                cout << "Podaj nowe nazwisko: ";
+                nazwisko = MetodyPomocnicze::wczytajLinie();
+                nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
+                adresaci[i].ustawNazwisko(nazwisko);
+                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                break;
+            case '3':
+                cout << "Podaj nowy numer telefonu: ";
+                nrTelefonu = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawNrTelefonu(nrTelefonu);
+                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                break;
+            case '4':
+                cout << "Podaj nowy email: ";
+                email = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawEmail(email);
+                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                break;
+            case '5':
+                cout << "Podaj nowy adres zamieszkania: ";
+                adres = MetodyPomocnicze::wczytajLinie();
+                adresaci[i].ustawAdres(adres);
+                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                break;
+            case '6':
+                cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false) {
+        cout << endl << "Nie ma takiego adresata." << endl << endl;
+    }
+    system("pause");
+}
+
+int AdresatMenadzer::podajIdWybranegoAdresata() {
+    int idWybranegoAdresata = 0;
+    cout << "Podaj numer ID Adresata: ";
+    idWybranegoAdresata  = MetodyPomocnicze::wczytajLiczbeCalkowita();
+    return idWybranegoAdresata;
+}
+
+char AdresatMenadzer::wybierzOpcjeZMenuEdycja() {
+    char wybor;
+
+    cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Ktore dane zaktualizowac: " << endl;
+    cout << "1 - Imie" << endl;
+    cout << "2 - Nazwisko" << endl;
+    cout << "3 - Numer telefonu" << endl;
+    cout << "4 - Email" << endl;
+    cout << "5 - Adres" << endl;
+    cout << "6 - Powrot " << endl;
+    cout << endl << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
+}
