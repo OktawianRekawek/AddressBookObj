@@ -18,11 +18,15 @@ class PlikZAdresatami {
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string);
     Adresat pobierzDaneAdresata(string);
+    void edytujWybranaLinieWPliku(string);
+    void usunPlik(string);
+    void zmienNazwePliku(string, string);
 public:
     PlikZAdresatami(string);
     bool dopiszAdresataDoPliku(Adresat);
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int);
     int pobierzIdOstatniegoAdresata();
+    void zaktualizujDaneWybranegoAdresata(Adresat);
 };
 
 #endif // PLIKZADRESATAMI_H

@@ -105,32 +105,32 @@ void AdresatMenadzer::edytujAdresata() {
                 imie = MetodyPomocnicze::wczytajLinie();
                 imie = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
                 adresaci[i].ustawImie(imie);
-                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '2':
                 cout << "Podaj nowe nazwisko: ";
                 nazwisko = MetodyPomocnicze::wczytajLinie();
                 nazwisko = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
                 adresaci[i].ustawNazwisko(nazwisko);
-                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '3':
                 cout << "Podaj nowy numer telefonu: ";
                 nrTelefonu = MetodyPomocnicze::wczytajLinie();
                 adresaci[i].ustawNrTelefonu(nrTelefonu);
-                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '4':
                 cout << "Podaj nowy email: ";
                 email = MetodyPomocnicze::wczytajLinie();
                 adresaci[i].ustawEmail(email);
-                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '5':
                 cout << "Podaj nowy adres zamieszkania: ";
                 adres = MetodyPomocnicze::wczytajLinie();
                 adresaci[i].ustawAdres(adres);
-                //zaktualizujDaneWybranegoAdresata(adresaci[i], idEdytowanegoAdresata);
+                plikZAdresatami.zaktualizujDaneWybranegoAdresata(adresaci[i]);
                 break;
             case '6':
                 cout << endl << "Powrot do menu uzytkownika" << endl << endl;
@@ -171,3 +171,5 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja() {
 
     return wybor;
 }
+
+
