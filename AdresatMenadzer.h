@@ -28,7 +28,7 @@ public:
     void wypiszWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void edytujAdresata();
-    int usunAdresata();
+    void usunAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
 };

@@ -184,6 +184,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
     int idWczytanegoAdresata = 0;
+    int idPoprzedniegoAdresata = 0;
     bool flagaUsunieciaAdresata = false;
     string nazwaTymczasowegoPlikuZAdresatami = "Adresaci_tymczasowo.txt";
 
@@ -194,6 +195,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia)) {
             // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
             // aby na koncu pliku nie bylo pustej linii
+            idPoprzedniegoAdresata = idWczytanegoAdresata;
             idWczytanegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
             if (idWczytanegoAdresata == idUsuwanegoAdresata)
                 flagaUsunieciaAdresata = true;
@@ -207,6 +209,11 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int idUsuwanegoAdresata) {
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
             numerWczytanejLinii++;
         }
+
+        if (idWczytanegoAdresata != idUsuwanegoAdresata)
+            idOstatniegoAdresata = idWczytanegoAdresata;
+        else
+            idOstatniegoAdresata = idPoprzedniegoAdresata;
         odczytywanyPlikTekstowy.close();
         tymczasowyPlikTekstowy.close();
 
