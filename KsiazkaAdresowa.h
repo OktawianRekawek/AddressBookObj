@@ -30,5 +30,6 @@ public:
     void edytujAdresata();
     void usunAdresata();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 #endif //KSIAZKAADRESOWA_H

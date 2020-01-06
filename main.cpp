@@ -59,7 +59,7 @@ int main() {
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                //wyszukiwanie po nazwisku
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wypiszWszystkichAdresatow();

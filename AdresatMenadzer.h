@@ -30,6 +30,7 @@ public:
     void edytujAdresata();
     int usunAdresata();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif // ADRESATMENADZER_H
