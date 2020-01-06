@@ -29,5 +29,6 @@ public:
     bool czyUzytkownikJestZalogowany();
     void edytujAdresata();
     void usunAdresata();
+    void wyszukajAdresatowPoImieniu();
 };
 #endif //KSIAZKAADRESOWA_H
