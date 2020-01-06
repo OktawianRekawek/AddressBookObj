@@ -172,7 +172,7 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja() {
     return wybor;
 }
 
-int AdresatMenadzer::usunAdresata() {
+void AdresatMenadzer::usunAdresata() {
     int idUsuwanegoAdresata = 0;
 
     system("cls");
@@ -192,11 +192,11 @@ int AdresatMenadzer::usunAdresata() {
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                return idUsuwanegoAdresata;
+                return;
             } else {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
                 system("pause");
-                return 0;
+                return;
             }
         }
     }
@@ -204,7 +204,6 @@ int AdresatMenadzer::usunAdresata() {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-    return 0;
 }
 
 void AdresatMenadzer::wyszukajAdresatowPoImieniu() {
