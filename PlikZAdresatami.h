@@ -27,6 +27,7 @@ public:
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int);
     int pobierzIdOstatniegoAdresata();
     void zaktualizujDaneWybranegoAdresata(Adresat);
+    void usunWybranegoAdresataZPliku(int);
 };
 
 #endif // PLIKZADRESATAMI_H

@@ -27,6 +27,7 @@ public:
     void wypiszWszystkichAdresatow();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void edytujAdresata();
+    int usunAdresata();
 };
 
 #endif // ADRESATMENADZER_H

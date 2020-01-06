@@ -65,8 +65,7 @@ int main() {
                 ksiazkaAdresowa.wypiszWszystkichAdresatow();
                 break;
             case '5':
-                //idUsunietegoAdresata = usunAdresata(adresaci);
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
                 ksiazkaAdresowa.edytujAdresata();
