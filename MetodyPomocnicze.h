@@ -18,7 +18,6 @@ public:
     static string konwerjsaIntNaString(int);
     static string wczytajLinie();
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string);
-    static bool czyPlikJestPusty(fstream&);
     static string pobierzLiczbe(string, int);
     static int konwersjaStringNaInt(string);
     static char wczytajZnak();
